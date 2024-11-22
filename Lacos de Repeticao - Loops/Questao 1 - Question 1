@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+int A, B, somaPrimos=0, naoPrimo=0;
+
+cout << "Escolha o numeros do intervalo [A,B]" << endl;
+
+cout << "Primeiro numero: ";
+cin >> A;
+
+cout << "Segundo numero: ";
+cin >> B;
+
+for(int j=A; j<=B; j++){
+
+    for (int i = 2; i < j; i++){
+        if (j%i==0){
+            naoPrimo++;
+        }
+    }
+
+    if (j==0 || j==1){
+        naoPrimo++;
+    }
+    
+
+    if (naoPrimo==0){
+        cout << j << " eh primo" << endl;
+        somaPrimos += j;
+    }
+
+    naoPrimo = 0;
+
+}
+
+cout << "A soma dos primos eh: " << somaPrimos;
+
+}
